@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/moondays/precache-manifest.3be5bc9e0b47c49543651258b6616131.js"
+  "/moondays/precache-manifest.e534d106fba678ae0ce4cf7e98c0c130.js"
 );
 
 self.addEventListener('message', (event) => {
