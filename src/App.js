@@ -101,16 +101,16 @@ function App() {
   return (
     <div className="App">
       <h1 className="white">M◐◑N DAYS</h1>
-      <Row gutter={8}>
-        <Col>
+      <Row gutter={8} style={{marginBottom: 8}}>
+        <Col span={22}>
           <h3 className="white" style={{marginBottom: 16}}>A lunar calendar event creator. Made by <a href="https://ericbai.co/">Eric Bai</a>.</h3>
         </Col>
-        <Col>
+        <Col span={2}>
           <Button ghost size="small" shape="circle" icon={<QuestionOutlined />} onClick={() => setDrawerVisible(true)}/>
         </Col>
       </Row>
       <Form
-        wrapperCol={{ span: 8 }}
+        wrapperCol={{ span: 12 }}
         layout="horizontal"
         onFinish={onFinish}
         initialValues={{

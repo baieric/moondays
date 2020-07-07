@@ -24,6 +24,12 @@
   font-size: 80px;
 }
 
+@media (max-width: 768px) {
+  .App h1 {
+    font-size: 40px;
+  }
+}
+
 .App .white {
   color: #FFFFFF;
 }
