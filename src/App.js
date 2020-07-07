@@ -102,8 +102,8 @@ function App() {
     <div className="App">
       <h1 className="white">M◐◑N DAYS</h1>
       <Row gutter={8} style={{marginBottom: 8, alignItems: "center"}}>
-        <Col span={22}>
-          <h3 className="white" style={{marginBottom: 16}}>A lunar calendar event creator. Made by <a href="https://ericbai.co/">Eric Bai</a>.</h3>
+        <Col xs={22} sm={14} md={14} lg={12} xl={12}>
+          <h3 className="white" style={{marginBottom: 16}}>Create lunar calendar events. Made by <a href="https://ericbai.co/">Eric Bai</a>.</h3>
         </Col>
         <Col span={2}>
           <Button ghost size="small" shape="circle" icon={<QuestionOutlined />} onClick={() => setDrawerVisible(true)}/>
@@ -159,19 +159,19 @@ function App() {
         </Modal>
 
       <Drawer
-        title="ABOUT M◐◑N DAYS "
+        title="ABOUT M◐◑N DAYS"
         placement="right"
         closable={false}
         onClose={() => setDrawerVisible(false)}
         visible={drawerVisible}
       >
         <p>
-          The most commonly used calendar in the world is the Gregorian calendar.
-          Some traditional holidays, such as Chinese New Year, are based on a lunisolar calendar, often colloquially called the lunar calendar.
+          My dad celebrates his birthday according to the Chinese calendar. Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
+          I made M◐◑N DAYS so that anyone can create annual lunar calendar events.
         </p>
         <p>
-          My dad celebrates his birthday according to the Chinese calendar. Every year, I'm a bit confused about when to actually celebrate his birthday.
-          I made M◐◑N DAYS so that anyone can specify a lunar calendar date and create annual calendar events for their favourite calendar app.
+          The most commonly used calendar in the world is the Gregorian calendar.
+          Some traditional holidays, such as Chinese New Year, are based on a lunisolar calendar, often colloquially called the lunar calendar.
         </p>
       </Drawer>
     </div>
