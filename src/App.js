@@ -93,6 +93,7 @@ function App() {
         <div>
           <p>{`Your calendar file contains ${events.length} ${events.length === 1 ? "event" : "events"} on ${formatDateList(events)}.`}</p>
           <p>Import this file to your favourite calendar app!</p>
+          <p><a href="https://calendar.google.com/calendar/r/settings/export">Import to Google Calendar</a></p>
           <p>Note: If you want to delete these events, you will have to delete each one manually.</p>
         </div>}
     />);
