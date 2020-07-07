@@ -40,7 +40,7 @@ const formatDateList = events => {
   } else {
     const shortList = [events[0], events[1], "...", events[events.length-1]];
     return shortList.map(
-      event => event == "..." ? event : event["start"].map(num => pad(num, 2)).join("/")
+      event => event === "..." ? event : event["start"].map(num => pad(num, 2)).join("/")
     ).join(", ");
   }
 }
@@ -91,7 +91,7 @@ function App() {
       title={`${title} downloaded!`}
       extra={
         <div>
-          <p>{`Your calendar file contains ${events.length} ${events.length == 1 ? "event" : "events"} on ${formatDateList(events)}.`}</p>
+          <p>{`Your calendar file contains ${events.length} ${events.length === 1 ? "event" : "events"} on ${formatDateList(events)}.`}</p>
           <p>Import this file to your favourite calendar app!</p>
           <p>Note: If you want to delete these events, you will have to delete each one manually.</p>
         </div>}
