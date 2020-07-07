@@ -101,7 +101,7 @@ function App() {
   return (
     <div className="App">
       <h1 className="white">M◐◑N DAYS</h1>
-      <Row gutter={8} style={{marginBottom: 8}}>
+      <Row gutter={8} style={{marginBottom: 8, alignItems: "center"}}>
         <Col span={22}>
           <h3 className="white" style={{marginBottom: 16}}>A lunar calendar event creator. Made by <a href="https://ericbai.co/">Eric Bai</a>.</h3>
         </Col>
