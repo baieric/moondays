@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import {
   Button,
-  DatePicker,
   Input,
   InputNumber,
   Form,
@@ -11,10 +10,10 @@ import {
   Modal,
   Result,
   Drawer,
+  Select,
 } from "antd";
 import "antd/dist/antd.dark.css";
 import {
-  EnvironmentOutlined,
   QuestionOutlined,
   SmileOutlined,
   FrownOutlined,
@@ -25,6 +24,7 @@ import 'moment-lunar';
 const ics = require('ics');
 const FileSaver = require('file-saver');
 const slugify = require('slugify');
+const {Option} = Select;
 
 const pad = (n, width, z) => {
   z = z || '0';
@@ -45,31 +45,53 @@ const formatDateList = events => {
   }
 }
 
+const makeEventList = (year, month, day, recurrences, title, description) => {
+  const events = [];
+
+  for (var i = 0; i < recurrences; i++) {
+    const solar = moment()
+      .year(year + i)
+      .month(month)
+      .date(day)
+      .solar();
+
+    const event = {
+      title: title,
+      start: [solar.year(), solar.month() + 1, solar.date()],
+      duration: {days: 1},
+      description: description,
+    };
+
+    events.push(event);
+  }
+
+  return events;
+}
+
 function App() {
   const [modal, setModal] = useState(null);
   const [drawerVisible, setDrawerVisible] = useState(false);
+  const [confirmMessage, setConfirmMessage] = useState(null);
+  const [form] = Form.useForm();
+
+  const onDateChange = () => {
+    const fields = form.getFieldsValue();
+    const year = fields["year"];
+    const month = fields["month"];
+    const day = fields["day"];
+    const recurrences = fields["recurrences"];
+
+    if (fields && year && month && day && recurrences && year > 1890 && year < 2061 && recurrences > 0 && recurrences < 51){
+      const events = makeEventList(year, month, day, recurrences, null, null);
+      setConfirmMessage(`Download ${events.length} ${events.length === 1 ? "event" : "events"}: ${formatDateList(events)}.`);
+    } else {
+      setConfirmMessage(null);
+    }
+  }
 
   const onFinish = values => {
-    const {date, title, recurrences, location, description} = values;
-    const events = [];
-
-    for (var i = 0; i < recurrences; i++) {
-      const solar = moment()
-        .year(date.year() + i)
-        .month(date.month())
-        .date(date.date())
-        .solar();
-
-      const event = {
-        title: title,
-        start: [solar.year(), solar.month() + 1, solar.date()],
-        duration: {days: 1},
-        location: location,
-        description: description,
-      };
-
-      events.push(event);
-    }
+    const {month, day, year, title, recurrences, description} = values;
+    const events = makeEventList(year, month, day, recurrences, title, description);
 
     const { error, value } = ics.createEvents(events);
     if (error) {
@@ -99,6 +121,11 @@ function App() {
     />);
   };
 
+  const days = [];
+  for (var i = 1; i <= 30; i++) {
+      days.push(i);
+  }
+
   return (
     <div className="App">
       <h1 className="white">M◐◑N DAYS</h1>
@@ -111,11 +138,13 @@ function App() {
         </Col>
       </Row>
       <Form
+        form={form}
         wrapperCol={{ span: 12 }}
         layout="horizontal"
         onFinish={onFinish}
         initialValues={{
-          recurrences: 25,
+          recurrences: 15,
+          year: moment().year(),
         }}
       >
         <Form.Item name="title" rules={[{ required: true, message: "Event title is required." }]}>
@@ -123,32 +152,49 @@ function App() {
         </Form.Item>
         <Form.Item>
           <Input.Group compact style={{display: "flex", alignItems: "center"}}>
-            <Form.Item noStyle name="date" rules={[{ required: true, message: "Date is required." }]}>
-              <DatePicker />
+            <div className="white" style={{ marginRight: 8 }} >Lunar date:</div>
+            <Form.Item noStyle name="month" rules={[{ required: true, message: "Month is required." }]}>
+              <Select
+                placeholder="Select month"
+                onChange={onDateChange}
+              >
+                <Option value={0}>1st month</Option>
+                <Option value={1}>2nd month</Option>
+                <Option value={2}>3rd month</Option>
+                {[3, 4, 5, 6, 7, 8, 9, 10, 11].map(i => <Option value={i}>{`${i+1}th month`}</Option>)}
+              </Select>
             </Form.Item>
-            <div className="white" style={{ marginLeft: 8 }}>(according to the lunar calendar)</div>
+            <Form.Item noStyle name="day" rules={[{ required: true, message: "Day is required." }]}>
+              <Select
+                placeholder="Select day"
+                onChange={onDateChange}
+              >
+                {days.map(i => <Option value={i}>{i}</Option>)}
+              </Select>
+            </Form.Item>
           </Input.Group>
         </Form.Item>
         <Form.Item>
           <Input.Group compact style={{display: "flex", alignItems: "center"}}>
             <div className="white" style={{ marginRight: 8 }} >Annually for </div>
             <Form.Item noStyle name="recurrences" rules={[{ required: true, message: "Number of recurrences is required." }]}>
-              <InputNumber min={1} max={100} style={{ marginRight: 8 }} />
+              <InputNumber onChange={onDateChange} min={1} max={50} style={{ marginRight: 8 }} />
             </Form.Item>
-            <div className="white">years</div>
+            <div className="white" style={{ marginRight: 8 }}>years starting in</div>
+            <Form.Item noStyle name="year" rules={[{ required: true, message: "Year is required." }]}>
+              <InputNumber onChange={onDateChange} min={1890} max={2060} />
+            </Form.Item>
           </Input.Group>
-        </Form.Item>
-        <Form.Item name="location">
-          <Input placeholder="Add location (optional)" prefix={<EnvironmentOutlined />} />
         </Form.Item>
         <Form.Item name="description">
           <Input.TextArea rows={4} placeholder="Add description (optional)" />
         </Form.Item>
         <Form.Item>
           <Button ghost shape="round" htmlType="submit">
-            Create Events
+            Download Events
           </Button>
         </Form.Item>
+        {confirmMessage != null && <p>{confirmMessage}</p>}
       </Form>
 
       <Modal
@@ -167,7 +213,7 @@ function App() {
         visible={drawerVisible}
       >
         <p>
-          My dad celebrates his birthday according to the Chinese calendar. Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
+          My dad celebrates his birthday according to the <a href="https://en.wikipedia.org/wiki/Chinese_calendar">Chinese calendar</a>. Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
           I made M◐◑N DAYS so that anyone can create annual lunar calendar events.
         </p>
         <p>
