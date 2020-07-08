@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/moondays/static/css/main.fca31261.chunk.css",
-    "main.js": "/moondays/static/js/main.158b469a.chunk.js",
-    "main.js.map": "/moondays/static/js/main.158b469a.chunk.js.map",
+    "main.js": "/moondays/static/js/main.ca329bbf.chunk.js",
+    "main.js.map": "/moondays/static/js/main.ca329bbf.chunk.js.map",
     "runtime-main.js": "/moondays/static/js/runtime-main.7c09e60d.js",
     "runtime-main.js.map": "/moondays/static/js/runtime-main.7c09e60d.js.map",
     "static/css/2.df3db916.chunk.css": "/moondays/static/css/2.df3db916.chunk.css",
-    "static/js/2.5720b774.chunk.js": "/moondays/static/js/2.5720b774.chunk.js",
-    "static/js/2.5720b774.chunk.js.map": "/moondays/static/js/2.5720b774.chunk.js.map",
+    "static/js/2.4e67d470.chunk.js": "/moondays/static/js/2.4e67d470.chunk.js",
+    "static/js/2.4e67d470.chunk.js.map": "/moondays/static/js/2.4e67d470.chunk.js.map",
     "index.html": "/moondays/index.html",
-    "precache-manifest.e83a19bbe20ebb56fefeaf2d8a5e8a94.js": "/moondays/precache-manifest.e83a19bbe20ebb56fefeaf2d8a5e8a94.js",
+    "precache-manifest.510c18f02d22427b39e93323cc3bdece.js": "/moondays/precache-manifest.510c18f02d22427b39e93323cc3bdece.js",
     "service-worker.js": "/moondays/service-worker.js",
     "static/css/2.df3db916.chunk.css.map": "/moondays/static/css/2.df3db916.chunk.css.map",
     "static/css/main.fca31261.chunk.css.map": "/moondays/static/css/main.fca31261.chunk.css.map",
-    "static/js/2.5720b774.chunk.js.LICENSE.txt": "/moondays/static/js/2.5720b774.chunk.js.LICENSE.txt",
+    "static/js/2.4e67d470.chunk.js.LICENSE.txt": "/moondays/static/js/2.4e67d470.chunk.js.LICENSE.txt",
     "static/media/App.css": "/moondays/static/media/LEMONMILK-Medium.79445849.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.7c09e60d.js",
     "static/css/2.df3db916.chunk.css",
-    "static/js/2.5720b774.chunk.js",
+    "static/js/2.4e67d470.chunk.js",
     "static/css/main.fca31261.chunk.css",
-    "static/js/main.158b469a.chunk.js"
+    "static/js/main.ca329bbf.chunk.js"
   ]
 }
