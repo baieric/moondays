@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/moondays/static/css/main.fca31261.chunk.css",
-    "main.js": "/moondays/static/js/main.ca329bbf.chunk.js",
-    "main.js.map": "/moondays/static/js/main.ca329bbf.chunk.js.map",
+    "main.js": "/moondays/static/js/main.8b151135.chunk.js",
+    "main.js.map": "/moondays/static/js/main.8b151135.chunk.js.map",
     "runtime-main.js": "/moondays/static/js/runtime-main.7c09e60d.js",
     "runtime-main.js.map": "/moondays/static/js/runtime-main.7c09e60d.js.map",
     "static/css/2.df3db916.chunk.css": "/moondays/static/css/2.df3db916.chunk.css",
     "static/js/2.4e67d470.chunk.js": "/moondays/static/js/2.4e67d470.chunk.js",
     "static/js/2.4e67d470.chunk.js.map": "/moondays/static/js/2.4e67d470.chunk.js.map",
     "index.html": "/moondays/index.html",
-    "precache-manifest.510c18f02d22427b39e93323cc3bdece.js": "/moondays/precache-manifest.510c18f02d22427b39e93323cc3bdece.js",
+    "precache-manifest.0c652a18580bf0fa1fb92bc518d716cc.js": "/moondays/precache-manifest.0c652a18580bf0fa1fb92bc518d716cc.js",
     "service-worker.js": "/moondays/service-worker.js",
     "static/css/2.df3db916.chunk.css.map": "/moondays/static/css/2.df3db916.chunk.css.map",
     "static/css/main.fca31261.chunk.css.map": "/moondays/static/css/main.fca31261.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.df3db916.chunk.css",
     "static/js/2.4e67d470.chunk.js",
     "static/css/main.fca31261.chunk.css",
-    "static/js/main.ca329bbf.chunk.js"
+    "static/js/main.8b151135.chunk.js"
   ]
 }

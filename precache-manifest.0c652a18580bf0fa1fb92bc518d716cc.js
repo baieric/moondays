@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9c4efbb01e690a840c8c08f37f42b58d",
+    "revision": "49c9289bfcdb477f5b6cd4583b2a1909",
     "url": "/moondays/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moondays/static/css/2.df3db916.chunk.css"
   },
   {
-    "revision": "a083728a6c221d3f7bec",
+    "revision": "ec9090eff84f66633e01",
     "url": "/moondays/static/css/main.fca31261.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/moondays/static/js/2.4e67d470.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a083728a6c221d3f7bec",
-    "url": "/moondays/static/js/main.ca329bbf.chunk.js"
+    "revision": "ec9090eff84f66633e01",
+    "url": "/moondays/static/js/main.8b151135.chunk.js"
   },
   {
     "revision": "7546fb5ab6450dd9c7a0",
