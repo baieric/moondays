@@ -81,7 +81,7 @@ function App() {
     const day = fields["day"];
     const recurrences = fields["recurrences"];
 
-    if (fields && year && month && day && recurrences && year > 1890 && year < 2061 && recurrences > 0 && recurrences < 51){
+    if (fields && year && month != null && day && recurrences && year > 1890 && year < 2061 && recurrences > 0 && recurrences < 51){
       const events = makeEventList(year, month, day, recurrences, null, null);
       setConfirmMessage(`Download ${events.length} ${events.length === 1 ? "event" : "events"}: ${formatDateList(events)}.`);
     } else {
