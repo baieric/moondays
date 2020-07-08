@@ -115,7 +115,7 @@ function App() {
         <div>
           <p>{`Your calendar file contains ${events.length} ${events.length === 1 ? "event" : "events"} on ${formatDateList(events)}.`}</p>
           <p>Import this file to your favourite calendar app! Drag and drop usually works.</p>
-          <p><a href="https://calendar.google.com/calendar/r/settings/export">Import to Google Calendar</a></p>
+          <p><a href="https://calendar.google.com/calendar/r/settings/export" target="_blank">Import to Google Calendar</a></p>
           <p>Note: If you want to delete these events, you will have to delete each one manually.</p>
         </div>}
     />);
@@ -131,7 +131,7 @@ function App() {
       <h1 className="white">M◐◑N DAYS</h1>
       <Row gutter={8} style={{marginBottom: 8, alignItems: "center"}}>
         <Col xs={22} sm={14} md={14} lg={12} xl={12}>
-          <h3 className="white" style={{marginBottom: 16}}>Create lunar calendar events. Made by <a href="https://ericbai.co/">Eric Bai</a>.</h3>
+          <h3 className="white" style={{marginBottom: 16}}>Create lunar calendar events. Made by <a href="https://ericbai.co/" target="_blank">Eric Bai</a>.</h3>
         </Col>
         <Col span={2}>
           <Button ghost size="small" shape="circle" icon={<QuestionOutlined />} onClick={() => setDrawerVisible(true)}/>
@@ -213,7 +213,7 @@ function App() {
         visible={drawerVisible}
       >
         <p>
-          My dad celebrates his birthday according to the <a href="https://en.wikipedia.org/wiki/Chinese_calendar">Chinese calendar</a>. Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
+          My dad celebrates his birthday according to the <a href="https://en.wikipedia.org/wiki/Chinese_calendar" target="_blank">Chinese calendar</a>. Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
           I made M◐◑N DAYS so that anyone can create annual lunar calendar events.
         </p>
         <p>
