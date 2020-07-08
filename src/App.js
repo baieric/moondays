@@ -81,9 +81,14 @@ function App() {
     const day = fields["day"];
     const recurrences = fields["recurrences"];
 
-    if (fields && year && month != null && day && recurrences && year > 1890 && year < 2061 && recurrences > 0 && recurrences < 51){
+    if (
+      fields && year && month != null && day && recurrences &&
+      year > 1890 && year < 2061 && recurrences > 0 && recurrences < 51
+    ){
       const events = makeEventList(year, month, day, recurrences, null, null);
-      setConfirmMessage(`Download ${events.length} ${events.length === 1 ? "event" : "events"}: ${formatDateList(events)}.`);
+      setConfirmMessage(
+        `Download ${events.length} ${events.length === 1 ? "event" : "events"}: ${formatDateList(events)}.`
+      );
     } else {
       setConfirmMessage(null);
     }
@@ -115,7 +120,15 @@ function App() {
         <div>
           <p>{`Your calendar file contains ${events.length} ${events.length === 1 ? "event" : "events"} on ${formatDateList(events)}.`}</p>
           <p>Import this file to your favourite calendar app! Drag and drop usually works.</p>
-          <p><a href="https://calendar.google.com/calendar/r/settings/export" target="_blank">Import to Google Calendar</a></p>
+          <p>
+            <a
+              href="https://calendar.google.com/calendar/r/settings/export"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            Import to Google Calendar
+            </a>
+          </p>
           <p>Note: If you want to delete these events, you will have to delete each one manually.</p>
         </div>}
     />);
@@ -131,10 +144,18 @@ function App() {
       <h1 className="white">M◐◑N DAYS</h1>
       <Row gutter={8} style={{marginBottom: 8, alignItems: "center"}}>
         <Col xs={22} sm={14} md={14} lg={12} xl={12}>
-          <h3 className="white" style={{marginBottom: 16}}>Create lunar calendar events. Made by <a href="https://ericbai.co/" target="_blank">Eric Bai</a>.</h3>
+          <h3 className="white" style={{marginBottom: 16}}>
+            Create lunar calendar events. Made by <a href="https://ericbai.co/" target="_blank" rel="noopener noreferrer">Eric Bai</a>.
+          </h3>
         </Col>
         <Col span={2}>
-          <Button ghost size="small" shape="circle" icon={<QuestionOutlined />} onClick={() => setDrawerVisible(true)}/>
+          <Button
+            ghost
+            size="small"
+            shape="circle"
+            icon={<QuestionOutlined />}
+            onClick={() => setDrawerVisible(true)}
+          />
         </Col>
       </Row>
       <Form
@@ -177,7 +198,11 @@ function App() {
         <Form.Item>
           <Input.Group compact style={{display: "flex", alignItems: "center"}}>
             <div className="white" style={{ marginRight: 8 }} >Annually for </div>
-            <Form.Item noStyle name="recurrences" rules={[{ required: true, message: "Number of recurrences is required." }]}>
+            <Form.Item
+              noStyle
+              name="recurrences"
+              rules={[{ required: true, message: "Number of recurrences is required." }]}
+            >
               <InputNumber onChange={onDateChange} min={1} max={50} style={{ marginRight: 8 }} />
             </Form.Item>
             <div className="white" style={{ marginRight: 8 }}>years starting in</div>
@@ -213,7 +238,8 @@ function App() {
         visible={drawerVisible}
       >
         <p>
-          My dad celebrates his birthday according to the <a href="https://en.wikipedia.org/wiki/Chinese_calendar" target="_blank">Chinese calendar</a>. Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
+          My dad celebrates his birthday according to the <a href="https://en.wikipedia.org/wiki/Chinese_calendar" target="_blank" rel="noopener noreferrer">Chinese calendar</a>.
+          Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
           I made M◐◑N DAYS so that anyone can create annual lunar calendar events.
         </p>
         <p>
