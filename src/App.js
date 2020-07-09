@@ -87,7 +87,7 @@ function App() {
     ){
       const events = makeEventList(year, month, day, recurrences, null, null);
       setConfirmMessage(
-        `Download ${events.length} ${events.length === 1 ? "event" : "events"}: ${formatDateList(events)}.`
+        `You will download ${events.length} ${events.length === 1 ? "event" : "events"}: ${formatDateList(events)}.`
       );
     } else {
       setConfirmMessage(null);
@@ -104,7 +104,7 @@ function App() {
         icon={<FrownOutlined />}
         title="Something went wrong!"
         extra={
-          <div>
+          <div className="modal">
             <p>Sorry! Let Eric know his app is broken!</p>
           </div>}
       />);
@@ -117,8 +117,7 @@ function App() {
       icon={<SmileOutlined />}
       title={`${title} downloaded!`}
       extra={
-        <div>
-          <p>{`Your calendar file contains ${events.length} ${events.length === 1 ? "event" : "events"} on ${formatDateList(events)}.`}</p>
+        <div className="modal">
           <p>Import this file to your favourite calendar app! Drag and drop usually works.</p>
           <p>
             <a
@@ -179,10 +178,10 @@ function App() {
                 placeholder="Select month"
                 onChange={onDateChange}
               >
-                <Option value={0}>1st month</Option>
-                <Option value={1}>2nd month</Option>
-                <Option value={2}>3rd month</Option>
-                {[3, 4, 5, 6, 7, 8, 9, 10, 11].map(i => <Option value={i}>{`${i+1}th month`}</Option>)}
+                <Option className="option" value={0}>1st month</Option>
+                <Option className="option" value={1}>2nd month</Option>
+                <Option className="option" value={2}>3rd month</Option>
+                {[3, 4, 5, 6, 7, 8, 9, 10, 11].map(i => <Option className="option" value={i}>{`${i+1}th month`}</Option>)}
               </Select>
             </Form.Item>
             <Form.Item noStyle name="day" rules={[{ required: true, message: "Day is required." }]}>
@@ -190,7 +189,7 @@ function App() {
                 placeholder="Select day"
                 onChange={onDateChange}
               >
-                {days.map(i => <Option value={i}>{i}</Option>)}
+                {days.map(i => <Option className="option" value={i}>{i}</Option>)}
               </Select>
             </Form.Item>
           </Input.Group>
@@ -215,11 +214,11 @@ function App() {
           <Input.TextArea rows={4} placeholder="Add description (optional)" />
         </Form.Item>
         <Form.Item>
-          <Button ghost shape="round" htmlType="submit">
+          <Button className="downloadButton" ghost shape="round" htmlType="submit" size="large">
             Download Events
           </Button>
         </Form.Item>
-        {confirmMessage != null && <p>{confirmMessage}</p>}
+        {confirmMessage != null && <div><p>{confirmMessage}</p></div>}
       </Form>
 
       <Modal
@@ -231,21 +230,23 @@ function App() {
         </Modal>
 
       <Drawer
-        title="ABOUT M◐◑N DAYS"
+        title={<div className="about">ABOUT</div>}
         placement="right"
         closable={false}
         onClose={() => setDrawerVisible(false)}
         visible={drawerVisible}
       >
-        <p>
-          My dad celebrates his birthday according to the <a href="https://en.wikipedia.org/wiki/Chinese_calendar" target="_blank" rel="noopener noreferrer">Chinese calendar</a>.
-          Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
-          I made M◐◑N DAYS so that anyone can create annual lunar calendar events.
-        </p>
-        <p>
-          The most commonly used calendar in the world is the Gregorian calendar.
-          Some traditional holidays, such as Chinese New Year, are based on a lunisolar calendar, often colloquially called the lunar calendar.
-        </p>
+        <div className="about">
+          <p>
+            My dad celebrates his birthday according to the <a href="https://en.wikipedia.org/wiki/Chinese_calendar" target="_blank" rel="noopener noreferrer">Chinese calendar</a>.
+            Sadly, calendar apps do not let you create a recurring event based on these traditional calendars.
+            I made M◐◑N DAYS so that anyone can create annual lunar calendar events.
+          </p>
+          <p>
+            The most commonly used calendar in the world is the Gregorian calendar.
+            Some traditional holidays, such as Chinese New Year, are based on a lunisolar calendar, often colloquially called the lunar calendar.
+          </p>
+        </div>
       </Drawer>
     </div>
   );

@@ -10,6 +10,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'AktivGrotesk-Bold';
+  src: url('fonts/AktivGrotesk-Bold.eot');
+  src: url('fonts/AktivGrotesk-Bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/AktivGrotesk-Bold.svg#AktivGrotesk-Bold') format('svg'),
+       url('fonts/AktivGrotesk-Bold.ttf') format('truetype'),
+       url('fonts/AktivGrotesk-Bold.woff') format('woff'),
+       url('fonts/AktivGrotesk-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   padding: 40px 200px;
   background: #0F2027;  /* fallback for old browsers */
@@ -19,9 +31,17 @@
   margin: 0 auto;
 }
 
-.App h1{
+.App h1 {
   font-family: 'LEMONMILK-Medium', 'serif-regular',serif;
   font-size: 80px;
+}
+
+.App h3 {
+  font-family: 'LEMONMILK-Medium', 'serif-regular',serif;
+}
+
+.downloadButton {
+  font-family: 'LEMONMILK-Medium', 'serif-regular',serif;
 }
 
 @media (max-width: 768px) {
@@ -36,6 +56,24 @@
   }
 }
 
-.App .white {
+.white {
+  color: #FFFFFF;
+}
+
+.App div {
+  font-family: 'AktivGrotesk-Bold', 'serif-regular',serif;
+}
+
+.option{
+  font-family: 'AktivGrotesk-Bold', 'serif-regular',serif;
+}
+
+.about {
+  font-family: 'AktivGrotesk-Bold', 'serif-regular',serif;
+  color: #FFFFFF;
+}
+
+.modal {
+  font-family: 'AktivGrotesk-Bold', 'serif-regular',serif;
   color: #FFFFFF;
 }
