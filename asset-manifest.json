@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/moondays/static/css/main.fca31261.chunk.css",
-    "main.js": "/moondays/static/js/main.8b151135.chunk.js",
-    "main.js.map": "/moondays/static/js/main.8b151135.chunk.js.map",
+    "main.css": "/moondays/static/css/main.9945fe2b.chunk.css",
+    "main.js": "/moondays/static/js/main.b66bd69c.chunk.js",
+    "main.js.map": "/moondays/static/js/main.b66bd69c.chunk.js.map",
     "runtime-main.js": "/moondays/static/js/runtime-main.7c09e60d.js",
     "runtime-main.js.map": "/moondays/static/js/runtime-main.7c09e60d.js.map",
     "static/css/2.df3db916.chunk.css": "/moondays/static/css/2.df3db916.chunk.css",
     "static/js/2.4e67d470.chunk.js": "/moondays/static/js/2.4e67d470.chunk.js",
     "static/js/2.4e67d470.chunk.js.map": "/moondays/static/js/2.4e67d470.chunk.js.map",
     "index.html": "/moondays/index.html",
-    "precache-manifest.0c652a18580bf0fa1fb92bc518d716cc.js": "/moondays/precache-manifest.0c652a18580bf0fa1fb92bc518d716cc.js",
+    "precache-manifest.732ecedc78ef4b2a49657fc6dd6288db.js": "/moondays/precache-manifest.732ecedc78ef4b2a49657fc6dd6288db.js",
     "service-worker.js": "/moondays/service-worker.js",
     "static/css/2.df3db916.chunk.css.map": "/moondays/static/css/2.df3db916.chunk.css.map",
-    "static/css/main.fca31261.chunk.css.map": "/moondays/static/css/main.fca31261.chunk.css.map",
+    "static/css/main.9945fe2b.chunk.css.map": "/moondays/static/css/main.9945fe2b.chunk.css.map",
     "static/js/2.4e67d470.chunk.js.LICENSE.txt": "/moondays/static/js/2.4e67d470.chunk.js.LICENSE.txt",
     "static/media/App.css": "/moondays/static/media/LEMONMILK-Medium.79445849.svg"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.7c09e60d.js",
     "static/css/2.df3db916.chunk.css",
     "static/js/2.4e67d470.chunk.js",
-    "static/css/main.fca31261.chunk.css",
-    "static/js/main.8b151135.chunk.js"
+    "static/css/main.9945fe2b.chunk.css",
+    "static/js/main.b66bd69c.chunk.js"
   ]
 }
