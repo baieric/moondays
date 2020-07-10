@@ -196,7 +196,7 @@ function App() {
         </Form.Item>
         <Form.Item>
           <Input.Group compact style={{display: "flex", alignItems: "center"}}>
-            <div className="white" style={{ marginRight: 8 }} >Annually for </div>
+            <div className="white" style={{ marginRight: 8 }} >Annually for</div>
             <Form.Item
               noStyle
               name="recurrences"
@@ -204,7 +204,12 @@ function App() {
             >
               <InputNumber onChange={onDateChange} min={1} max={50} style={{ marginRight: 8 }} />
             </Form.Item>
-            <div className="white" style={{ marginRight: 8 }}>years starting in</div>
+            <div className="white" style={{ marginRight: 8 }}>years</div>
+          </Input.Group>
+        </Form.Item>
+        <Form.Item>
+          <Input.Group compact style={{display: "flex", alignItems: "center"}}>
+            <div className="white" style={{ marginRight: 8 }}>Starting from</div>
             <Form.Item noStyle name="year" rules={[{ required: true, message: "Year is required." }]}>
               <InputNumber onChange={onDateChange} min={1890} max={2060} />
             </Form.Item>
